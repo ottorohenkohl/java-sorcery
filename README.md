@@ -21,7 +21,7 @@ Diese Extension:
 
 ### Erweiterung in deine Quarkus-Anwendung einbinden
 
-Wenn du lokal entwickelst:
+Fertige Pakete werden in der [Container Registry](https://sources.rohenkohl.dev/entwicklung/java/sorcery/-/packages) bereitsgestellt und können im Projekt eingebunden werden:
 
 ```xml
 <dependency>
@@ -29,12 +29,6 @@ Wenn du lokal entwickelst:
   <artifactId>sorcery-deployment</artifactId>
   <version>1.0.0</version>
 </dependency>
-```
-
-Oder zunächst lokal installieren:
-
-```bash
-./mvnw clean install
 ```
 
 ### Bean-Listing aktivieren (optional, aber empfohlen)
