@@ -1,0 +1,9 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+    <servers>
+        <server>
+            <id>gitlab-maven</id>
+            <username>${CI_JOB_TOKEN}</username>
+            <password>${CI_JOB_TOKEN}</password>
+        </server>
+    </servers>
+</settings>

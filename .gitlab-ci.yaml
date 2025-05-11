@@ -1,0 +1,21 @@
+before_script:
+  - pacman -Sy
+  - pacman -S --noconfirm docker jdk21-openjdk
+
+variables:
+  JAVA_HOME: "/usr/lib/jvm/java-21-openjdk"
+  MAVEN_REPO_URL: "$CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/maven"
+
+stages:
+  - build
+  - release
+
+build-gradle-project:
+  stage: build
+  script:
+    - ./mvnw clean install
+
+push-to-registry:
+  stage: release
+  script:
+    - ./mvnw deploy
