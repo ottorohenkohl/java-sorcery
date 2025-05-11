@@ -13,9 +13,9 @@ stages:
 build-gradle-project:
   stage: build
   script:
-    - ./mvnw clean install
+    - ./mvnw -s settings.xml clean install
 
 push-to-registry:
   stage: release
   script:
-    - ./mvnw deploy
+    - ./mvnw s settings.xml deploy
