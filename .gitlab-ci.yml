@@ -10,7 +10,7 @@ stages:
   - build
   - release
 
-build-gradle-project:
+build-maven-project:
   stage: build
   script:
     - ./mvnw -s settings.xml clean install
