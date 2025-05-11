@@ -20,7 +20,7 @@
     <distributionManagement>
         <repository>
             <id>gitlab-maven</id>
-            <name>GitLab Maven Repository</name>
+            <name>Sources Repository</name>
             <url>${env.MAVEN_REPO_URL}</url>
         </repository>
     </distributionManagement>
