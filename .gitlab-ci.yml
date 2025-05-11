@@ -18,4 +18,4 @@ build-gradle-project:
 push-to-registry:
   stage: release
   script:
-    - ./mvnw s settings.xml deploy
+    - ./mvnw -s settings.xml deploy
