@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>sorcery</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>sorcery-parent</artifactId>
+        <groupId>dev.rohenkohl.sorcery</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <groupId>io.quarkus</groupId>
+                <version>3.22.2</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <deployment>${project.groupId}:${project.artifactId}-deployment:${project.version}</deployment>
+                        </configuration>
+                        <goals>
+                            <goal>extension-descriptor</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <artifactId>quarkus-extension-processor</artifactId>
+                                    <groupId>io.quarkus</groupId>
+                                    <version>3.22.2</version>
+                                </path>
+                            </annotationProcessorPaths>
+                        </configuration>
+                        <id>default-compile</id>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
