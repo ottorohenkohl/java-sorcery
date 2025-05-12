@@ -19,8 +19,6 @@ public class DarkScopeSorcery {
         public void apply(TransformationContext transformationContext) {
             if (transformationContext.declaration().kind() != CLASS || !hasSuffix(transformationContext)) return;
 
-            System.out.println(transformationContext.declaration().asClass().name());
-
             transformationContext.remove(DependentTransformer::hasAnnotation);
             transformationContext.add(ApplicationScoped.class);
         }

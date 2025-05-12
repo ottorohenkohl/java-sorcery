@@ -6,7 +6,7 @@
     <parent>
         <artifactId>sorcery-parent</artifactId>
         <groupId>dev.rohenkohl.sorcery</groupId>
-        <version>1.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <dependencies>
